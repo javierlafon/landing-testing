@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Contacto - Dirección General de Gestión Estratégica de la Información
+    </title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="shortcut icon" href="assets/favicom.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="site-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="container header-container">
+          <div class="logo">
+            <a href="index.html" class="logo-link">
+              <img
+                src="assets/logo.svg"
+                alt="Logo GI"
+                class="logo-image"
+                width="28"
+                height="28"
+              />
+              <span class="logo-text">DGGEI</span>
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            <a href="contacto.html" class="nav-link active">Contacto</a>
+            <a href="descargas.html" class="nav-link active">Descargas</a>
+          </nav>
+
+          <div class="header-actions">
+            <a href="contacto.html" class="button primary-button"
+              >Contáctanos</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-button" aria-label="Toggle Menu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="menu-icon"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="close-icon hidden"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav hidden">
+          <div class="container mobile-nav-container">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="nosotros.html" class="nav-link">Nosotros</a>
+            <a href="contacto.html" class="nav-link active">Contacto</a>
+            <a href="descargas.html" class="nav-link">Descargas</a>
+            <a href="contacto.html" class="button primary-button full-width"
+              >Contáctanos</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="container page-container">
+          <!-- Contact Header -->
+          <div class="page-header">
+            <h1 class="page-title">Contáctanos</h1>
+            <p class="page-description">
+              Estamos aquí para responder tus consultas y ayudarte con la
+              gestión de información
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="card contact-form-card">
+              <div class="card-content">
+                <h2 class="section-title">Envíanos un mensaje</h2>
+                <div id="form-success-message" class="success-message hidden">
+                  ¡Gracias por contactarnos! Te responderemos a la brevedad.
+                </div>
+                <form
+                  id="contact-form"
+                  class="contact-form"
+                  onsubmit="sendForm(event)"
+                >
+                  <div class="form-group">
+                    <label for="name" class="form-label">Nombre completo</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="form-input"
+                      placeholder="Tu nombre"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="form-label"
+                      >Correo electrónico</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="tu@correo.com"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="subject" class="form-label">Asunto</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      class="form-input"
+                      placeholder="Asunto de tu mensaje"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      class="form-textarea"
+                      placeholder="Escribe tu mensaje aquí..."
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="button primary-button full-width"
+                    id="submit-button"
+                  >
+                    Enviar mensaje
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+              <div class="card">
+                <div class="card-content">
+                  <h2 class="section-title">Información de contacto</h2>
+                  <div class="contact-details">
+                    <div class="contact-item">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon"
+                      >
+                        <path
+                          d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+                        ></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                      <div>
+                        <h3 class="contact-item-title">Dirección</h3>
+                        <p class="contact-item-text">
+                          Centro Administrativo Provincial<br />
+                          La Rioja - Capital, CP 5300
+                        </p>
+                      </div>
+                    </div>
+                    <div class="contact-item">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon"
+                      >
+                        <path
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path>
+                      </svg>
+                      <div>
+                        <h3 class="contact-item-title">Teléfono</h3>
+                        <p class="contact-item-text">(+123) 456-7890</p>
+                      </div>
+                    </div>
+                    <div class="contact-item">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon"
+                      >
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path
+                          d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+                        ></path>
+                      </svg>
+                      <div>
+                        <h3 class="contact-item-title">Correo electrónico</h3>
+                        <p class="contact-item-text">
+                          gestiondelainformacion.msp@gmail.com
+                        </p>
+                        <p class="contact-item-text">
+                          estadisticas.salud.msp@gmail.com
+                        </p>
+                      </div>
+                    </div>
+                    <div class="contact-item">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                      <div>
+                        <h3 class="contact-item-title">Horario de atención</h3>
+                        <p class="contact-item-text">
+                          Lunes a viernes: 8:00 - 13:00<br />
+                          Sábados y domingos: Cerrado
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Map -->
+              <div class="card map-card">
+                <div class="map-placeholder">
+                  <p class="map-placeholder-text">
+                    Mapa interactivo de nuestra ubicación
+                    <br />
+                    <span class="map-placeholder-subtext"
+                      ><iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3343.742573573482!2d-66.85952069999999!3d-29.4300107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427dbd21a9eafe9%3A0x290761e71077c26a!2sMinisterio%20de%20Salud%20P%C3%BAblica!5e1!3m2!1ses!2sar!4v1743521096053!5m2!1ses!2sar"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                      ></iframe
+                    ></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-main">
+            <div class="footer-info">
+              <!-- Footer info logo -->
+              <div class="logo">
+                <a href="index.html" class="logo-link">
+                  <img
+                    src="assets/logo.svg"
+                    alt="Logo GI"
+                    class="logo-image"
+                    width="28"
+                    height="28"
+                  />
+                  <span class="logo-text">DGGEI</span>
+                </a>
+              </div>
+              <p class="footer-description">
+                Dirección General de Gestión de la Información. Transformando
+                datos en conocimiento para una gestión pública más eficiente.
+              </p>
+            </div>
+            <div class="footer-links">
+              <div class="footer-links-column">
+                <h3 class="footer-links-title">Enlaces rápidos</h3>
+                <nav class="footer-nav">
+                  <a href="index.html" class="footer-link">Inicio</a>
+                  <a href="nosotros.html" class="footer-link">Nosotros</a>
+                  <a href="contacto.html" class="footer-link">Contacto</a>
+                </nav>
+              </div>
+              <div class="footer-links-column">
+                <h3 class="footer-links-title">Servicios</h3>
+                <nav class="footer-nav">
+                  <a href="#" class="footer-link">Gestión de Datos</a>
+                  <a href="#" class="footer-link">Análisis Estadístico</a>
+                  <a href="#" class="footer-link">Documentación Digital</a>
+                  <a href="#" class="footer-link">Capacitación</a>
+                </nav>
+              </div>
+              <div class="footer-links-column">
+                <h3 class="footer-links-title">Legal</h3>
+                <nav class="footer-nav">
+                  <a href="#" class="footer-link">Términos de uso</a>
+                  <a href="#" class="footer-link">Política de privacidad</a>
+                  <a href="#" class="footer-link">Aviso legal</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p class="copyright">
+              &copy; <span id="current-year"></span> Dirección General de
+              Gestión de la Información. Todos los derechos reservados.
+            </p>
+            <div class="social-links">
+              <a
+                target="_blank"
+                href="https://www.youtube.com/"
+                class="social-link"
+                aria-label="YouTube"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+                  ></path>
+                  <path d="m10 15 5-3-5-3z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
