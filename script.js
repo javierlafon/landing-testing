@@ -1,172 +1,180 @@
-// Mobile Menu Toggle
-document.addEventListener("DOMContentLoaded", function () {
-  // Mobile menu toggle
-  const mobileMenuButton = document.querySelector(".mobile-menu-button");
-  const mobileNav = document.querySelector(".mobile-nav");
-  const menuIcon = document.querySelector(".menu-icon");
-  const closeIcon = document.querySelector(".close-icon");
+/* ==========================================================================
+   DGGEI — Interacciones del sitio
+   ========================================================================== */
 
-  if (mobileMenuButton) {
-    mobileMenuButton.addEventListener("click", function () {
-      mobileNav.classList.toggle("hidden");
-      menuIcon.classList.toggle("hidden");
-      closeIcon.classList.toggle("hidden");
-    });
-  }
+(function () {
+  "use strict";
 
-  // Contact form submission
-  const contactForm = document.getElementById("contact-form");
-  const formSuccessMessage = document.getElementById("form-success-message");
-  const submitButton = document.getElementById("submit-button");
+  // Pegá acá la URL de tu aplicación web de Apps Script (termina en /exec).
+  var CONTACT_ENDPOINT =
+    "https://script.google.com/macros/s/AKfycbzVoPxhJqw1M3M0BSczTmgvHRUOXs83H2VxJu-PoXhLSgHqfHEurNIGlQpSdEPrXXHH/exec";
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+  /* Menú móvil ------------------------------------------------------------ */
+  function initMobileMenu() {
+    var button = document.querySelector(".mobile-menu-button");
+    var panel = document.getElementById("mobile-nav");
 
-      // Disable submit button and show loading state
-      submitButton.disabled = true;
-      submitButton.textContent = "Enviando...";
+    if (!button || !panel) {
+      return;
+    }
 
-      // Simulate form submission with a delay
-      setTimeout(function () {
-        // Reset form
-        contactForm.reset();
+    var menuIcon = button.querySelector(".menu-icon");
+    var closeIcon = button.querySelector(".close-icon");
+    var desktopQuery = window.matchMedia("(min-width: 768px)");
 
-        // Show success message
-        formSuccessMessage.classList.remove("hidden");
+    function isOpen() {
+      return !panel.classList.contains("hidden");
+    }
 
-        // Reset button
-        submitButton.disabled = false;
-        submitButton.textContent = "Enviar mensaje";
+    function setOpen(open, restoreFocus) {
+      panel.classList.toggle("hidden", !open);
 
-        // Hide success message after 5 seconds
-        setTimeout(function () {
-          formSuccessMessage.classList.add("hidden");
-        }, 5000);
-      }, 1000);
-    });
-  }
-
-  // Set current year in footer
-  const currentYearElements = document.querySelectorAll("#current-year");
-  const currentYear = new Date().getFullYear();
-
-  currentYearElements.forEach(function (element) {
-    element.textContent = currentYear;
-  });
-});
-
-//google app script
-
-function sendForm(event) {
-  event.preventDefault(); // Evita el envío tradicional del formulario
-
-  var form = document.getElementById("contact-form");
-  var formData = new FormData(form);
-
-  // URL de tu Web App en Google Apps Script
-  var url =
-    "https://script.google.com/macros/s/AKfycbw12hSajd-imLVijEu-l1fLK8mypumHxOsEANsJrNAvJ2dv1wogmB8joEcoNsBNuuhcnA/exec"; // Reemplaza con tu URL real
-
-  fetch(url, {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === "SUCCESS") {
-        alert("¡Mensaje enviado correctamente!");
-        form.reset(); // Limpia el formulario después del envío
-      } else {
-        alert("Hubo un error al enviar el mensaje.");
-        console.error(data.message);
+      if (menuIcon) {
+        menuIcon.classList.toggle("hidden", open);
       }
-    })
-    .catch((error) => {
-      alert("Error al conectar con el servidor.");
-      console.error("Error:", error);
-    });
-}
-
-// File upload preview
-document.addEventListener("DOMContentLoaded", function () {
-  const fileInput = document.getElementById("document-file");
-  const fileNameDisplay = document.getElementById("file-name");
-
-  if (fileInput && fileNameDisplay) {
-    fileInput.addEventListener("change", function () {
-      if (fileInput.files.length > 0) {
-        const fileName = fileInput.files[0].name;
-        const fileSize = (fileInput.files[0].size / 1024 / 1024).toFixed(2); // Convert to MB
-        fileNameDisplay.textContent = `${fileName} (${fileSize} MB)`;
-      } else {
-        fileNameDisplay.textContent = "Ningún archivo seleccionado";
+      if (closeIcon) {
+        closeIcon.classList.toggle("hidden", !open);
       }
-    });
-  }
 
-  // Document upload form
-  const uploadDocumentForm = document.getElementById("upload-document-form");
-  if (uploadDocumentForm) {
-    uploadDocumentForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+      button.setAttribute("aria-expanded", String(open));
+      button.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
 
-      // Simulate form submission
-      const submitButton = uploadDocumentForm.querySelector(
-        'button[type="submit"]'
-      );
-      submitButton.disabled = true;
-      submitButton.textContent = "Subiendo...";
+      if (open) {
+        var firstLink = panel.querySelector("a");
+        if (firstLink) {
+          firstLink.focus({ preventScroll: true });
+        }
+      } else if (restoreFocus) {
+        button.focus();
+      }
+    }
 
-      setTimeout(function () {
-        // Reset form
-        uploadDocumentForm.reset();
-        fileNameDisplay.textContent = "Ningún archivo seleccionado";
+    // Sincroniza el estado inicial con el marcado.
+    setOpen(isOpen(), false);
 
-        // Show success message
-        alert("Documento subido correctamente");
-
-        // Reset button
-        submitButton.disabled = false;
-        submitButton.textContent = "Subir documento";
-      }, 2000);
-    });
-  }
-
-  // Add dashboard form
-  const addDashboardForm = document.getElementById("add-dashboard-form");
-  if (addDashboardForm) {
-    addDashboardForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Simulate form submission
-      const submitButton = addDashboardForm.querySelector(
-        'button[type="submit"]'
-      );
-      submitButton.disabled = true;
-      submitButton.textContent = "Agregando...";
-
-      setTimeout(function () {
-        // Reset form
-        addDashboardForm.reset();
-
-        // Show success message
-        alert("Tablero agregado correctamente");
-
-        // Reset button
-        submitButton.disabled = false;
-        submitButton.textContent = "Agregar tablero";
-      }, 2000);
-    });
-  }
-
-  // Dashboard view buttons
-  const dashboardViewButtons = document.querySelectorAll(".dashboard-view-btn");
-  dashboardViewButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      alert(
-        "Esta funcionalidad abriría el tablero de Power BI en una nueva ventana o en pantalla completa."
-      );
+      setOpen(!isOpen(), false);
     });
-  });
-});
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && isOpen()) {
+        setOpen(false, true);
+      }
+    });
+
+    panel.addEventListener("click", function (event) {
+      if (event.target instanceof Element && event.target.closest("a")) {
+        setOpen(false, false);
+      }
+    });
+
+    desktopQuery.addEventListener("change", function (event) {
+      if (event.matches) {
+        setOpen(false, false);
+      }
+    });
+  }
+
+  /* Formulario de contacto ------------------------------------------------- */
+  var SUCCESS_TEXT =
+    "¡Gracias por tu mensaje! Te responderemos a la brevedad.";
+  var ERROR_TEXT =
+    "No pudimos enviar el mensaje. Intenta nuevamente o escríbenos a ";
+  var FALLBACK_EMAIL = "gestiondelainformacion.msp@gmail.com";
+
+  function showSuccess(element) {
+    element.textContent = SUCCESS_TEXT;
+    element.classList.remove("hidden");
+    element.scrollIntoView({ block: "nearest" });
+  }
+
+  function showError(element) {
+    element.textContent = ERROR_TEXT;
+    var link = document.createElement("a");
+    link.href = "mailto:" + FALLBACK_EMAIL;
+    link.textContent = FALLBACK_EMAIL;
+    element.appendChild(link);
+    element.appendChild(document.createTextNode("."));
+    element.classList.remove("hidden");
+    element.scrollIntoView({ block: "nearest" });
+  }
+
+  function initContactForm() {
+    var form = document.getElementById("contact-form");
+    var successMessage = document.getElementById("form-success-message");
+    var errorMessage = document.getElementById("form-error-message");
+    var submitButton = document.getElementById("submit-button");
+
+    if (!form || !successMessage || !errorMessage || !submitButton) {
+      return;
+    }
+
+    if (CONTACT_ENDPOINT.indexOf("PEGAR_TU_URL_AQUI") !== -1) {
+      console.warn(
+        "Configurá CONTACT_ENDPOINT en script.js con la URL /exec de Apps Script."
+      );
+    }
+
+    var idleLabel = submitButton.textContent.trim();
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      successMessage.classList.add("hidden");
+      errorMessage.classList.add("hidden");
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+      submitButton.textContent = "Enviando…";
+
+      try {
+        // Apps Script no expone cabeceras CORS, así que el envío va en modo
+        // "no-cors": el navegador no puede leer la respuesta, pero el POST
+        // llega igual y la fila se guarda en el Sheet.
+        await fetch(CONTACT_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          body: new FormData(form),
+        });
+
+        form.reset();
+        showSuccess(successMessage);
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error);
+        showError(errorMessage);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+        submitButton.textContent = idleLabel;
+      }
+    });
+
+    form.addEventListener("input", function () {
+      errorMessage.classList.add("hidden");
+    });
+  }
+
+  /* Año actual en el pie --------------------------------------------------- */
+  function initCurrentYear() {
+    var year = String(new Date().getFullYear());
+    document.querySelectorAll("#current-year").forEach(function (element) {
+      element.textContent = year;
+    });
+  }
+
+  function init() {
+    initMobileMenu();
+    initContactForm();
+    initCurrentYear();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

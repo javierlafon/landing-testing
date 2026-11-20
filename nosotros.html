@@ -2,16 +2,46 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosotros - Dirección General de Gestión de la Información</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nosotros | DGGEI — Ministerio de Salud de La Rioja</title>
+    <meta
+      name="description"
+      content="Conoce la misión, la visión, la historia, el equipo directivo y los valores de la Dirección General de Gestión Estratégica de la Información de La Rioja."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DGGEI" />
+    <meta property="og:locale" content="es_AR" />
+    <meta
+      property="og:title"
+      content="Nosotros | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      property="og:description"
+      content="Misión, visión, historia, equipo directivo y valores de la Dirección General de Gestión Estratégica de la Información de La Rioja."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Nosotros | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      name="twitter:description"
+      content="Misión, visión, historia, equipo directivo y valores de la Dirección General de Gestión Estratégica de la Información de La Rioja."
+    />
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
-    <link rel="shortcut icon" href="assets/favicom.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <div class="site-container">
       <!-- Header -->
       <header class="header">
@@ -19,32 +49,41 @@
           <div class="logo">
             <a href="index.html" class="logo-link">
               <img
-                src="assets/logo.svg"
-                alt="Logo GI"
+                src="assets/logo-96.png"
+                alt=""
                 class="logo-image"
-                width="28"
-                height="28"
+                width="40"
+                height="40"
               />
               <span class="logo-text">DGGEI</span>
+              <span class="visually-hidden"
+                >— Dirección General de Gestión Estratégica de la Información</span
+              >
             </a>
           </div>
 
           <!-- Desktop Navigation -->
-          <nav class="desktop-nav">
+          <nav class="desktop-nav" aria-label="Navegación principal">
             <a href="index.html" class="nav-link">Inicio</a>
-            <a href="nosotros.html" class="nav-link active">Nosotros</a>
+            <a href="nosotros.html" class="nav-link" aria-current="page"
+              >Nosotros</a
+            >
             <a href="contacto.html" class="nav-link">Contacto</a>
-            <a href="descargas.html" class="nav-link active">Descargas</a>
+            <a href="descargas.html" class="nav-link">Descargas</a>
           </nav>
 
           <div class="header-actions">
-            <a href="contacto.html" class="button primary-button"
-              >Contáctanos</a
-            >
+            <a href="contacto.html" class="button primary-button">Contáctanos</a>
           </div>
 
           <!-- Mobile Menu Button -->
-          <button class="mobile-menu-button" aria-label="Toggle Menu">
+          <button
+            class="mobile-menu-button"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -56,6 +95,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="menu-icon"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -72,6 +113,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="close-icon hidden"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -80,26 +123,29 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="mobile-nav hidden">
-          <div class="container mobile-nav-container">
+        <div class="mobile-nav hidden" id="mobile-nav">
+          <nav class="container mobile-nav-container" aria-label="Navegación móvil">
             <a href="index.html" class="nav-link">Inicio</a>
-            <a href="nosotros.html" class="nav-link active">Nosotros</a>
+            <a href="nosotros.html" class="nav-link" aria-current="page"
+              >Nosotros</a
+            >
             <a href="contacto.html" class="nav-link">Contacto</a>
             <a href="descargas.html" class="nav-link">Descargas</a>
             <a href="contacto.html" class="button primary-button full-width"
               >Contáctanos</a
             >
-          </div>
+          </nav>
         </div>
       </header>
 
-      <main>
+      <main id="contenido" tabindex="-1">
         <div class="container page-container">
           <!-- About Us Header -->
           <div class="page-header">
-            <h1 class="page-title">Sobre Nosotros</h1>
+            <h1 class="page-title">Sobre nosotros</h1>
             <p class="page-description">
-              Conoce más sobre la Dirección General de Gestión de la Información
+              Conoce más sobre la Dirección General de Gestión Estratégica de la
+              Información
             </p>
           </div>
 
@@ -107,10 +153,10 @@
           <div class="mission-vision">
             <div class="card">
               <div class="card-header">
-                <h2 class="card-title accent">Nuestra Misión</h2>
+                <h2 class="card-title accent">Nuestra misión</h2>
               </div>
               <div class="card-content">
-                <p>
+                <p class="card-description">
                   Garantizar la gestión eficiente, segura y estratégica de la
                   información sanitaria en la provincia de La Rioja, promoviendo
                   el uso de datos de calidad para la toma de decisiones basadas
@@ -122,11 +168,11 @@
             </div>
             <div class="card">
               <div class="card-header">
-                <h2 class="card-title accent">Nuestra Visión</h2>
+                <h2 class="card-title accent">Nuestra visión</h2>
               </div>
               <div class="card-content">
-                <p>
-                  Ser un referente en la gestión y análisis de la información
+                <p class="card-description">
+                  Ser un referente en la gestión y el análisis de la información
                   sanitaria, impulsando la transformación digital y la
                   innovación en el sector salud. Buscamos consolidar un sistema
                   de información moderno, seguro y accesible que contribuya a
@@ -138,98 +184,109 @@
 
           <!-- History -->
           <div class="history-section">
-            <h2 class="section-title">Nuestra Historia</h2>
+            <h2 class="section-title">Nuestra historia</h2>
             <div class="history-content">
               <div class="history-text">
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Minus veritatis, repudiandae magni deleniti explicabo
-                  exercitationem quis, molestias iure, omnis autem in cum
-                  voluptatum facere ducimus harum quo qui itaque. Quisquam. .
+                  La Dirección General de Gestión Estratégica de la Información
+                  forma parte del Ministerio de Salud Pública de la provincia de
+                  La Rioja y tiene como propósito central organizar, resguardar
+                  y poner en valor la información sanitaria provincial.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa
-                  harum sit adipisci incidunt odit maiores repellat, laudantium
-                  quidem explicabo tempore porro, dolorum ipsum itaque libero
-                  nostrum deleniti fugiat tempora. Quas. .
+                  Su trabajo articula áreas técnicas y administrativas para
+                  consolidar los datos que producen los efectores de salud,
+                  garantizando estándares de calidad, trazabilidad y
+                  confidencialidad a lo largo de todo el circuito de la
+                  información.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  magni id, inventore corrupti possimus rem! Quos excepturi
-                  magnam et beatae facere odio atque, eaque voluptas quidem
-                  molestias, perspiciatis, numquam ipsa! .
+                  A través de la digitalización de documentos, la producción
+                  estadística y la capacitación permanente de los equipos de
+                  salud, la Dirección acompaña la planificación sanitaria y
+                  acerca información confiable a quienes toman decisiones.
                 </p>
               </div>
-              <div class="history-image">
-                <img
-                  src="https://via.placeholder.com/600x400"
-                  alt="Imagen representativa de nuestra historia"
-                  class="rounded-image"
-                />
+              <div class="history-media">
+                <div class="history-media-inner">
+                  <img
+                    src="assets/logo-96.png"
+                    srcset="assets/logo-96.png 1x, assets/logo-192.png 2x"
+                    alt=""
+                    class="history-logo"
+                    width="96"
+                    height="96"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p class="history-media-title">Ministerio de Salud Pública</p>
+                  <p class="history-media-subtitle">Provincia de La Rioja</p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Team -->
           <div class="team-section">
-            <h2 class="section-title">Nuestro Equipo Directivo</h2>
+            <h2 class="section-title">Nuestro equipo directivo</h2>
             <div class="team-grid">
-              <div class="card team-card">
+              <div class="card team-card team-card--featured">
                 <div class="team-member">
                   <div class="team-photo">
                     <img
-                      src="assets/juan_carlos_vergara.jpg"
-                      alt="Directora General"
+                      src="assets/team-vergara.jpg"
+                      alt="Retrato de Juan Carlos Vergara"
+                      width="176"
+                      height="176"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
-                  <h3 class="team-name">Juan Carlos Vergara</h3>
-                  <p class="team-position">Ministro de salud</p>
-                  <p class="team-bio">
-                    Médico Cirujano especialista en Ginecología y Obstetricia;
-                    magister en Administración de Servicios de Salud. Fué
-                    ministro de Salud de la Provincia de La Rioja y responsable
-                    del programa de Municipio Saludable. Fué diputado de la
-                    Provincia de La Rioja por el Departamento Capital..
-                  </p>
+                  <div class="team-card-body">
+                    <h3 class="team-name">Juan Carlos Vergara</h3>
+                    <p class="team-position">Ministro de Salud</p>
+                    <p class="team-bio">
+                      Médico cirujano especialista en Ginecología y Obstetricia;
+                      magíster en Administración de Servicios de Salud. Fue
+                      ministro de Salud de la Provincia de La Rioja y responsable
+                      del programa de Municipio Saludable. Fue diputado de la
+                      Provincia de La Rioja por el Departamento Capital.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div class="card team-card">
                 <div class="team-member">
                   <div class="team-photo">
-                    <img
-                      src="https://via.placeholder.com/96"
-                      alt="Directora General"
-                    />
+                    <span class="team-avatar" aria-hidden="true">MZ</span>
                   </div>
-                  <h3 class="team-name">Lic. Maria Laura Zapata</h3>
+                  <h3 class="team-name">Lic. María Laura Zapata</h3>
                   <p class="team-position">Directora General</p>
-                  <p class="team-bio">Description.</p>
                 </div>
               </div>
               <div class="card team-card">
                 <div class="team-member">
                   <div class="team-photo">
-                    <img
-                      src="https://via.placeholder.com/96"
-                      alt="Subdirectora de Tecnología"
-                    />
+                    <span class="team-avatar" aria-hidden="true">JL</span>
                   </div>
-                  <h3 class="team-name">Ing. Lafon Javier</h3>
+                  <h3 class="team-name">Ing. Javier Lafon</h3>
                   <p class="team-position">Subdirector de Tecnología</p>
-                  <p class="team-bio">Licenciado en Cosas.</p>
                 </div>
               </div>
               <div class="card team-card">
                 <div class="team-member">
                   <div class="team-photo">
                     <img
-                      src="assets/rodri.jpeg"
-                      alt="Subdirector de Análisis"
+                      src="assets/team-tigua.jpg"
+                      alt="Retrato de Rodrigo Tigua"
+                      width="176"
+                      height="176"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <h3 class="team-name">Lic. Rodrigo Tigua</h3>
                   <p class="team-position">Subdirector de Análisis</p>
-                  <p class="team-bio">...</p>
                 </div>
               </div>
             </div>
@@ -237,40 +294,38 @@
 
           <!-- Values -->
           <div class="values-section">
-            <h2 class="section-title">Nuestros Valores</h2>
+            <h2 class="section-title">Nuestros valores</h2>
             <div class="values-grid">
               <div class="value-card">
                 <h3 class="value-title">Transparencia</h3>
                 <p class="value-description">
-                  Garantizamos el acceso y uso responsable de la información
+                  Garantizamos el acceso y el uso responsable de la información
                   sanitaria, promoviendo la apertura de datos y la toma de
                   decisiones basadas en evidencia.
                 </p>
               </div>
               <div class="value-card">
-                <h3 class="value-title">Precisión y Calidad</h3>
+                <h3 class="value-title">Precisión y calidad</h3>
                 <p class="value-description">
-                  Trabajamos con rigurosidad en la gestión y análisis de datos,
-                  asegurando información confiable para mejorar la planificación
-                  y la eficiencia del sistema de salud.
+                  Trabajamos con rigurosidad en la gestión y el análisis de
+                  datos, asegurando información confiable para mejorar la
+                  planificación y la eficiencia del sistema de salud.
                 </p>
               </div>
               <div class="value-card">
-                <h3 class="value-title">Seguridad y Confidencialidad</h3>
+                <h3 class="value-title">Seguridad y confidencialidad</h3>
                 <p class="value-description">
-                  Protegemos la integridad y privacidad de los datos de salud
+                  Protegemos la integridad y la privacidad de los datos de salud
                   mediante el cumplimiento de normativas y la implementación de
-                  tecnologías de ciberseguridad avanzadas.
+                  tecnologías de ciberseguridad.
                 </p>
               </div>
               <div class="value-card">
-                <h3 class="value-title">Innovación y Desarrollo</h3>
+                <h3 class="value-title">Innovación y desarrollo</h3>
                 <p class="value-description">
                   Fomentamos la modernización digital y la capacitación continua
                   para optimizar los procesos de información y contribuir a una
-                  gestión sanitaria más eficiente y efectiva. Si quieres que
-                  adapte el tono o agregue algún valor específico, dime y lo
-                  ajusto.
+                  gestión sanitaria más eficiente y efectiva.
                 </p>
               </div>
             </div>
@@ -283,48 +338,71 @@
         <div class="container">
           <div class="footer-main">
             <div class="footer-info">
-              <!-- Footer info logo -->
               <div class="logo">
                 <a href="index.html" class="logo-link">
                   <img
-                    src="assets/logo.svg"
-                    alt="Logo GI"
+                    src="assets/logo-96.png"
+                    alt=""
                     class="logo-image"
-                    width="28"
-                    height="28"
+                    width="40"
+                    height="40"
                   />
                   <span class="logo-text">DGGEI</span>
+                  <span class="visually-hidden"
+                    >— Dirección General de Gestión Estratégica de la
+                    Información</span
+                  >
                 </a>
               </div>
               <p class="footer-description">
-                Dirección General de Gestión de la Información. Transformando
-                datos en conocimiento para una gestión pública más eficiente.
+                Dirección General de Gestión Estratégica de la Información.
+                Transformando datos en conocimiento para una gestión pública más
+                eficiente.
               </p>
             </div>
             <div class="footer-links">
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Enlaces rápidos</h3>
-                <nav class="footer-nav">
+                <nav class="footer-nav" aria-label="Enlaces rápidos">
                   <a href="index.html" class="footer-link">Inicio</a>
                   <a href="nosotros.html" class="footer-link">Nosotros</a>
                   <a href="contacto.html" class="footer-link">Contacto</a>
+                  <a href="descargas.html" class="footer-link">Descargas</a>
                 </nav>
               </div>
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Servicios</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Gestión de Datos</a>
-                  <a href="#" class="footer-link">Análisis Estadístico</a>
-                  <a href="#" class="footer-link">Documentación Digital</a>
-                  <a href="#" class="footer-link">Capacitación</a>
+                <nav class="footer-nav" aria-label="Servicios">
+                  <a href="index.html#servicios" class="footer-link"
+                    >Gestión de datos</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Análisis estadístico</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Documentación digital</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Capacitación</a
+                  >
                 </nav>
               </div>
               <div class="footer-links-column">
-                <h3 class="footer-links-title">Legal</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Términos de uso</a>
-                  <a href="#" class="footer-link">Política de privacidad</a>
-                  <a href="#" class="footer-link">Aviso legal</a>
+                <h3 class="footer-links-title">Contacto</h3>
+                <nav class="footer-nav" aria-label="Contacto">
+                  <a
+                    href="mailto:gestiondelainformacion.msp@gmail.com"
+                    class="footer-link"
+                    >gestiondelainformacion.msp<wbr />@gmail.com</a
+                  >
+                  <a
+                    href="mailto:estadisticas.salud.msp@gmail.com"
+                    class="footer-link"
+                    >estadisticas.salud.msp<wbr />@gmail.com</a
+                  >
+                  <a href="contacto.html" class="footer-link"
+                    >Centro Administrativo Provincial, La Rioja</a
+                  >
                 </nav>
               </div>
             </div>
@@ -332,14 +410,16 @@
           <div class="footer-bottom">
             <p class="copyright">
               &copy; <span id="current-year"></span> Dirección General de
-              Gestión de la Información. Todos los derechos reservados.
+              Gestión Estratégica de la Información. Todos los derechos
+              reservados.
             </p>
             <div class="social-links">
               <a
                 target="_blank"
-                href="https://www.youtube.com/"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/@GestiondelaInformacion-MSP"
                 class="social-link"
-                aria-label="YouTube"
+                aria-label="Canal de YouTube de la Dirección General de Gestión Estratégica de la Información"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -351,6 +431,8 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
                 >
                   <path
                     d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
@@ -364,6 +446,6 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

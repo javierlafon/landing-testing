@@ -2,50 +2,109 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dirección General de Gestión de la Información</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestión de la Información | DGGEI — Ministerio de Salud de La Rioja</title>
+    <meta
+      name="description"
+      content="Gestión de datos, análisis estadístico, documentación digital, capacitación y seguridad de la información sanitaria en La Rioja."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DGGEI" />
+    <meta property="og:locale" content="es_AR" />
+    <meta
+      property="og:title"
+      content="Gestión de la Información | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      property="og:description"
+      content="Gestión de datos, análisis estadístico, documentación digital, capacitación y seguridad de la información sanitaria en La Rioja."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Gestión de la Información | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      name="twitter:description"
+      content="Gestión de datos, análisis estadístico, documentación digital, capacitación y seguridad de la información sanitaria en La Rioja."
+    />
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
-    <link rel="shortcut icon" href="assets/favicom.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "GovernmentOrganization",
+        "name": "Dirección General de Gestión Estratégica de la Información",
+        "alternateName": "DGGEI",
+        "description": "Área del Ministerio de Salud Pública de la provincia de La Rioja encargada de administrar, analizar y proteger la información sanitaria.",
+        "email": "gestiondelainformacion.msp@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Centro Administrativo Provincial",
+          "addressLocality": "La Rioja",
+          "addressRegion": "La Rioja",
+          "postalCode": "5300",
+          "addressCountry": "AR"
+        },
+        "parentOrganization": {
+          "@type": "GovernmentOrganization",
+          "name": "Ministerio de Salud Pública de la Provincia de La Rioja"
+        },
+        "sameAs": ["https://www.youtube.com/@GestiondelaInformacion-MSP"]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <div class="site-container">
       <!-- Header -->
       <header class="header">
         <div class="container header-container">
-          <!-- Reemplaza la sección del logo en todas las páginas HTML con este código -->
           <div class="logo">
             <a href="index.html" class="logo-link">
               <img
-                src="assets/logo.svg"
-                alt="Logo GI"
+                src="assets/logo-96.png"
+                alt=""
                 class="logo-image"
-                width="28"
-                height="28"
+                width="40"
+                height="40"
               />
               <span class="logo-text">DGGEI</span>
+              <span class="visually-hidden"
+                >— Dirección General de Gestión Estratégica de la Información</span
+              >
             </a>
           </div>
 
           <!-- Desktop Navigation -->
-          <nav class="desktop-nav">
-            <a href="index.html" class="nav-link">Inicio</a>
+          <nav class="desktop-nav" aria-label="Navegación principal">
+            <a href="index.html" class="nav-link" aria-current="page">Inicio</a>
             <a href="nosotros.html" class="nav-link">Nosotros</a>
             <a href="contacto.html" class="nav-link">Contacto</a>
             <a href="descargas.html" class="nav-link">Descargas</a>
           </nav>
 
           <div class="header-actions">
-            <a href="contacto.html" class="button primary-button"
-              >Contáctanos</a
-            >
+            <a href="contacto.html" class="button primary-button">Contáctanos</a>
           </div>
 
           <!-- Mobile Menu Button -->
-          <button class="mobile-menu-button" aria-label="Toggle Menu">
+          <button
+            class="mobile-menu-button"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -57,6 +116,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="menu-icon"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -73,6 +134,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="close-icon hidden"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -81,24 +144,25 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="mobile-nav hidden">
-          <div class="container mobile-nav-container">
-            <a href="index.html" class="nav-link">Inicio</a>
+        <div class="mobile-nav hidden" id="mobile-nav">
+          <nav class="container mobile-nav-container" aria-label="Navegación móvil">
+            <a href="index.html" class="nav-link" aria-current="page">Inicio</a>
             <a href="nosotros.html" class="nav-link">Nosotros</a>
             <a href="contacto.html" class="nav-link">Contacto</a>
             <a href="descargas.html" class="nav-link">Descargas</a>
             <a href="contacto.html" class="button primary-button full-width"
               >Contáctanos</a
             >
-          </div>
+          </nav>
         </div>
       </header>
 
-      <main>
+      <main id="contenido" tabindex="-1">
         <!-- Hero Section -->
         <section class="hero">
           <div class="container">
             <div class="hero-content">
+              <p class="eyebrow">Ministerio de Salud Pública · La Rioja</p>
               <h1 class="hero-title">
                 Dirección General de Gestión Estratégica de la Información
               </h1>
@@ -112,9 +176,7 @@
                 en la provincia.
               </p>
               <div class="hero-buttons">
-                <a href="nosotros.html" class="button primary-button"
-                  >Conócenos</a
-                >
+                <a href="nosotros.html" class="button primary-button">Conócenos</a>
                 <a href="contacto.html" class="button outline-button"
                   >Contáctanos</a
                 >
@@ -124,36 +186,39 @@
         </section>
 
         <!-- Services Section -->
-        <section class="services">
+        <section class="services" id="servicios" aria-labelledby="servicios-title">
           <div class="container">
             <div class="section-header">
-              <h2 class="section-title">Nuestros Servicios</h2>
+              <h2 class="section-title" id="servicios-title">Nuestros servicios</h2>
               <p class="section-description">
-                Ofrecemos soluciones integrales para la gestión de información
-                en el sector público
+                Soluciones integrales para la gestión de la información en el
+                sector público
               </p>
             </div>
             <div class="services-grid">
-              <div class="card">
+              <article class="card">
                 <div class="card-header">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon"
-                  >
-                    <path d="M12 2v8"></path>
-                    <path d="M4 10h16"></path>
-                    <path d="M12 14v8"></path>
-                    <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                  </svg>
-                  <h3 class="card-title">Gestión de Datos</h3>
+                  <span class="icon-wrap">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M12 2v8"></path>
+                      <path d="M4 10h16"></path>
+                      <path d="M12 14v8"></path>
+                      <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                    </svg>
+                  </span>
+                  <h3 class="card-title">Gestión de datos</h3>
                 </div>
                 <div class="card-content">
                   <p class="card-description">
@@ -163,27 +228,30 @@
                     estratégicas.
                   </p>
                 </div>
-              </div>
-              <div class="card">
+              </article>
+              <article class="card">
                 <div class="card-header">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon"
-                  >
-                    <path d="M3 3v18h18"></path>
-                    <path d="M18 17V9"></path>
-                    <path d="M13 17V5"></path>
-                    <path d="M8 17v-3"></path>
-                  </svg>
-                  <h3 class="card-title">Análisis Estadístico</h3>
+                  <span class="icon-wrap">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M3 3v18h18"></path>
+                      <path d="M18 17V9"></path>
+                      <path d="M13 17V5"></path>
+                      <path d="M8 17v-3"></path>
+                    </svg>
+                  </span>
+                  <h3 class="card-title">Análisis estadístico</h3>
                 </div>
                 <div class="card-content">
                   <p class="card-description">
@@ -193,30 +261,33 @@
                     la provincia.
                   </p>
                 </div>
-              </div>
-              <div class="card">
+              </article>
+              <article class="card">
                 <div class="card-header">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon"
-                  >
-                    <path
-                      d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
-                    ></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                    <line x1="10" y1="9" x2="8" y2="9"></line>
-                  </svg>
-                  <h3 class="card-title">Documentación Digital</h3>
+                  <span class="icon-wrap">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path
+                        d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+                      ></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <line x1="10" y1="9" x2="8" y2="9"></line>
+                    </svg>
+                  </span>
+                  <h3 class="card-title">Documentación digital</h3>
                 </div>
                 <div class="card-content">
                   <p class="card-description">
@@ -226,26 +297,29 @@
                     seguros.
                   </p>
                 </div>
-              </div>
-              <div class="card">
+              </article>
+              <article class="card">
                 <div class="card-header">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon"
-                  >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
+                  <span class="icon-wrap">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </span>
                   <h3 class="card-title">Capacitación</h3>
                 </div>
                 <div class="card-content">
@@ -256,51 +330,51 @@
                     toma de decisiones basadas en evidencia.
                   </p>
                 </div>
-              </div>
-              <div class="card">
+              </article>
+              <article class="card">
                 <div class="card-header">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon"
-                  >
-                    <path
-                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-                    ></path>
-                  </svg>
-                  <h3 class="card-title">Seguridad de la Información</h3>
+                  <span class="icon-wrap">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </span>
+                  <h3 class="card-title">Seguridad de la información</h3>
                 </div>
                 <div class="card-content">
                   <p class="card-description">
                     Aplicamos políticas y tecnologías para proteger la
                     confidencialidad, integridad y disponibilidad de los datos
                     de salud, garantizando el cumplimiento de normativas y
-                    estándares de ciberseguridad. Si necesitas que adapte el
-                    tono o agregue algo más específico, dime y lo ajusto.
+                    estándares de ciberseguridad.
                   </p>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </section>
 
         <!-- Call to Action -->
-        <section class="cta">
+        <section class="cta" aria-labelledby="cta-title">
           <div class="container">
             <div class="cta-content">
-              <h2 class="cta-title">
+              <h2 class="cta-title" id="cta-title">
                 ¿Necesitas asesoría en gestión de información?
               </h2>
               <p class="cta-description">
-                Nuestro equipo de expertos está listo para ayudarte a
-                implementar soluciones adaptadas a tus necesidades.
+                Nuestro equipo puede ayudarte a implementar soluciones adaptadas
+                a las necesidades de tu área.
               </p>
               <a href="contacto.html" class="button primary-button"
                 >Solicitar información</a
@@ -315,28 +389,32 @@
         <div class="container">
           <div class="footer-main">
             <div class="footer-info">
-              <!-- Footer info logo -->
               <div class="logo">
                 <a href="index.html" class="logo-link">
                   <img
-                    src="assets/logo.svg"
-                    alt="Logo GI"
+                    src="assets/logo-96.png"
+                    alt=""
                     class="logo-image"
-                    width="28"
-                    height="28"
+                    width="40"
+                    height="40"
                   />
                   <span class="logo-text">DGGEI</span>
+                  <span class="visually-hidden"
+                    >— Dirección General de Gestión Estratégica de la
+                    Información</span
+                  >
                 </a>
               </div>
               <p class="footer-description">
-                Dirección General de Gestión de la Información. Transformando
-                datos en conocimiento para una gestión pública más eficiente.
+                Dirección General de Gestión Estratégica de la Información.
+                Transformando datos en conocimiento para una gestión pública más
+                eficiente.
               </p>
             </div>
             <div class="footer-links">
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Enlaces rápidos</h3>
-                <nav class="footer-nav">
+                <nav class="footer-nav" aria-label="Enlaces rápidos">
                   <a href="index.html" class="footer-link">Inicio</a>
                   <a href="nosotros.html" class="footer-link">Nosotros</a>
                   <a href="contacto.html" class="footer-link">Contacto</a>
@@ -345,19 +423,37 @@
               </div>
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Servicios</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Gestión de Datos</a>
-                  <a href="#" class="footer-link">Análisis Estadístico</a>
-                  <a href="#" class="footer-link">Documentación Digital</a>
-                  <a href="#" class="footer-link">Capacitación</a>
+                <nav class="footer-nav" aria-label="Servicios">
+                  <a href="index.html#servicios" class="footer-link"
+                    >Gestión de datos</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Análisis estadístico</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Documentación digital</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Capacitación</a
+                  >
                 </nav>
               </div>
               <div class="footer-links-column">
-                <h3 class="footer-links-title">Legal</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Términos de uso</a>
-                  <a href="#" class="footer-link">Política de privacidad</a>
-                  <a href="#" class="footer-link">Aviso legal</a>
+                <h3 class="footer-links-title">Contacto</h3>
+                <nav class="footer-nav" aria-label="Contacto">
+                  <a
+                    href="mailto:gestiondelainformacion.msp@gmail.com"
+                    class="footer-link"
+                    >gestiondelainformacion.msp<wbr />@gmail.com</a
+                  >
+                  <a
+                    href="mailto:estadisticas.salud.msp@gmail.com"
+                    class="footer-link"
+                    >estadisticas.salud.msp<wbr />@gmail.com</a
+                  >
+                  <a href="contacto.html" class="footer-link"
+                    >Centro Administrativo Provincial, La Rioja</a
+                  >
                 </nav>
               </div>
             </div>
@@ -365,14 +461,16 @@
           <div class="footer-bottom">
             <p class="copyright">
               &copy; <span id="current-year"></span> Dirección General de
-              Gestión de la Información. Todos los derechos reservados.
+              Gestión Estratégica de la Información. Todos los derechos
+              reservados.
             </p>
             <div class="social-links">
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.youtube.com/@GestiondelaInformacion-MSP"
                 class="social-link"
-                aria-label="YouTube"
+                aria-label="Canal de YouTube de la Dirección General de Gestión Estratégica de la Información"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -384,6 +482,8 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
                 >
                   <path
                     d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
@@ -397,6 +497,6 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

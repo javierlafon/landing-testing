@@ -2,18 +2,46 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Contacto - Dirección General de Gestión Estratégica de la Información
-    </title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto | DGGEI — Ministerio de Salud de La Rioja</title>
+    <meta
+      name="description"
+      content="Ponte en contacto con la Dirección General de Gestión Estratégica de la Información de La Rioja. Consultas, dirección, correos electrónicos y horario de atención."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DGGEI" />
+    <meta property="og:locale" content="es_AR" />
+    <meta
+      property="og:title"
+      content="Contacto | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      property="og:description"
+      content="Consultas, dirección, correos electrónicos y horario de atención de la Dirección General de Gestión Estratégica de la Información de La Rioja."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Contacto | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      name="twitter:description"
+      content="Consultas, dirección, correos electrónicos y horario de atención de la Dirección General de Gestión Estratégica de la Información de La Rioja."
+    />
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
-    <link rel="shortcut icon" href="assets/favicom.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <div class="site-container">
       <!-- Header -->
       <header class="header">
@@ -21,32 +49,41 @@
           <div class="logo">
             <a href="index.html" class="logo-link">
               <img
-                src="assets/logo.svg"
-                alt="Logo GI"
+                src="assets/logo-96.png"
+                alt=""
                 class="logo-image"
-                width="28"
-                height="28"
+                width="40"
+                height="40"
               />
               <span class="logo-text">DGGEI</span>
+              <span class="visually-hidden"
+                >— Dirección General de Gestión Estratégica de la Información</span
+              >
             </a>
           </div>
 
           <!-- Desktop Navigation -->
-          <nav class="desktop-nav">
+          <nav class="desktop-nav" aria-label="Navegación principal">
             <a href="index.html" class="nav-link">Inicio</a>
             <a href="nosotros.html" class="nav-link">Nosotros</a>
-            <a href="contacto.html" class="nav-link active">Contacto</a>
-            <a href="descargas.html" class="nav-link active">Descargas</a>
+            <a href="contacto.html" class="nav-link" aria-current="page"
+              >Contacto</a
+            >
+            <a href="descargas.html" class="nav-link">Descargas</a>
           </nav>
 
           <div class="header-actions">
-            <a href="contacto.html" class="button primary-button"
-              >Contáctanos</a
-            >
+            <a href="contacto.html" class="button primary-button">Contáctanos</a>
           </div>
 
           <!-- Mobile Menu Button -->
-          <button class="mobile-menu-button" aria-label="Toggle Menu">
+          <button
+            class="mobile-menu-button"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -58,6 +95,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="menu-icon"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -74,6 +113,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="close-icon hidden"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -82,27 +123,29 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="mobile-nav hidden">
-          <div class="container mobile-nav-container">
+        <div class="mobile-nav hidden" id="mobile-nav">
+          <nav class="container mobile-nav-container" aria-label="Navegación móvil">
             <a href="index.html" class="nav-link">Inicio</a>
             <a href="nosotros.html" class="nav-link">Nosotros</a>
-            <a href="contacto.html" class="nav-link active">Contacto</a>
+            <a href="contacto.html" class="nav-link" aria-current="page"
+              >Contacto</a
+            >
             <a href="descargas.html" class="nav-link">Descargas</a>
             <a href="contacto.html" class="button primary-button full-width"
               >Contáctanos</a
             >
-          </div>
+          </nav>
         </div>
       </header>
 
-      <main>
+      <main id="contenido" tabindex="-1">
         <div class="container page-container">
           <!-- Contact Header -->
           <div class="page-header">
             <h1 class="page-title">Contáctanos</h1>
             <p class="page-description">
-              Estamos aquí para responder tus consultas y ayudarte con la
-              gestión de información
+              Estamos para responder tus consultas y ayudarte con la gestión de
+              la información
             </p>
           </div>
 
@@ -111,28 +154,49 @@
             <div class="card contact-form-card">
               <div class="card-content">
                 <h2 class="section-title">Envíanos un mensaje</h2>
-                <div id="form-success-message" class="success-message hidden">
-                  ¡Gracias por contactarnos! Te responderemos a la brevedad.
-                </div>
-                <form
-                  id="contact-form"
-                  class="contact-form"
-                  onsubmit="sendForm(event)"
-                >
+
+                <div
+                  id="form-success-message"
+                  class="success-message hidden"
+                  role="status"
+                ></div>
+                <div
+                  id="form-error-message"
+                  class="error-message hidden"
+                  role="alert"
+                ></div>
+
+                <form id="contact-form" class="contact-form">
+                  <div class="form-honeypot" aria-hidden="true">
+                    <label for="website">No completar este campo</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabindex="-1"
+                      autocomplete="off"
+                    />
+                  </div>
                   <div class="form-group">
-                    <label for="name" class="form-label">Nombre completo</label>
+                    <label for="name" class="form-label"
+                      >Nombre completo
+                      <span class="required-mark" aria-hidden="true">*</span></label
+                    >
                     <input
                       type="text"
                       id="name"
                       name="name"
                       class="form-input"
-                      placeholder="Tu nombre"
+                      placeholder="Ej.: Ana Gómez"
+                      autocomplete="name"
+                      maxlength="100"
                       required
                     />
                   </div>
                   <div class="form-group">
                     <label for="email" class="form-label"
-                      >Correo electrónico</label
+                      >Correo electrónico
+                      <span class="required-mark" aria-hidden="true">*</span></label
                     >
                     <input
                       type="email"
@@ -140,31 +204,47 @@
                       name="email"
                       class="form-input"
                       placeholder="tu@correo.com"
+                      autocomplete="email"
+                      inputmode="email"
+                      autocapitalize="none"
+                      spellcheck="false"
+                      maxlength="254"
                       required
                     />
                   </div>
                   <div class="form-group">
-                    <label for="subject" class="form-label">Asunto</label>
+                    <label for="subject" class="form-label"
+                      >Asunto
+                      <span class="required-mark" aria-hidden="true">*</span></label
+                    >
                     <input
                       type="text"
                       id="subject"
                       name="subject"
                       class="form-input"
-                      placeholder="Asunto de tu mensaje"
+                      placeholder="Ej.: Consulta sobre datos de salud"
+                      maxlength="120"
                       required
                     />
                   </div>
                   <div class="form-group">
-                    <label for="message" class="form-label">Mensaje</label>
+                    <label for="message" class="form-label"
+                      >Mensaje
+                      <span class="required-mark" aria-hidden="true">*</span></label
+                    >
                     <textarea
                       id="message"
                       name="message"
                       class="form-textarea"
                       placeholder="Escribe tu mensaje aquí..."
-                      rows="5"
+                      rows="6"
+                      maxlength="2000"
                       required
                     ></textarea>
                   </div>
+                  <p class="form-hint">
+                    Los campos marcados con * son obligatorios.
+                  </p>
                   <button
                     type="submit"
                     class="button primary-button full-width"
@@ -194,6 +274,8 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         class="icon"
+                        aria-hidden="true"
+                        focusable="false"
                       >
                         <path
                           d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
@@ -204,7 +286,7 @@
                         <h3 class="contact-item-title">Dirección</h3>
                         <p class="contact-item-text">
                           Centro Administrativo Provincial<br />
-                          La Rioja - Capital, CP 5300
+                          La Rioja, Capital · CP 5300
                         </p>
                       </div>
                     </div>
@@ -220,28 +302,8 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         class="icon"
-                      >
-                        <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                        ></path>
-                      </svg>
-                      <div>
-                        <h3 class="contact-item-title">Teléfono</h3>
-                        <p class="contact-item-text">(+123) 456-7890</p>
-                      </div>
-                    </div>
-                    <div class="contact-item">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon"
+                        aria-hidden="true"
+                        focusable="false"
                       >
                         <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                         <path
@@ -251,10 +313,18 @@
                       <div>
                         <h3 class="contact-item-title">Correo electrónico</h3>
                         <p class="contact-item-text">
-                          gestiondelainformacion.msp@gmail.com
+                          <a
+                            class="contact-item-link"
+                            href="mailto:gestiondelainformacion.msp@gmail.com"
+                            >gestiondelainformacion.msp<wbr />@gmail.com</a
+                          >
                         </p>
                         <p class="contact-item-text">
-                          estadisticas.salud.msp@gmail.com
+                          <a
+                            class="contact-item-link"
+                            href="mailto:estadisticas.salud.msp@gmail.com"
+                            >estadisticas.salud.msp<wbr />@gmail.com</a
+                          >
                         </p>
                       </div>
                     </div>
@@ -270,6 +340,8 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         class="icon"
+                        aria-hidden="true"
+                        focusable="false"
                       >
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
@@ -277,8 +349,8 @@
                       <div>
                         <h3 class="contact-item-title">Horario de atención</h3>
                         <p class="contact-item-text">
-                          Lunes a viernes: 8:00 - 13:00<br />
-                          Sábados y domingos: Cerrado
+                          Lunes a viernes: 8:00 a 13:00 h<br />
+                          Sábados y domingos: cerrado
                         </p>
                       </div>
                     </div>
@@ -288,22 +360,14 @@
 
               <!-- Map -->
               <div class="card map-card">
-                <div class="map-placeholder">
-                  <p class="map-placeholder-text">
-                    Mapa interactivo de nuestra ubicación
-                    <br />
-                    <span class="map-placeholder-subtext"
-                      ><iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3343.742573573482!2d-66.85952069999999!3d-29.4300107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427dbd21a9eafe9%3A0x290761e71077c26a!2sMinisterio%20de%20Salud%20P%C3%BAblica!5e1!3m2!1ses!2sar!4v1743521096053!5m2!1ses!2sar"
-                        width="600"
-                        height="450"
-                        style="border: 0"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                      ></iframe
-                    ></span>
-                  </p>
+                <div class="map-embed">
+                  <iframe
+                    title="Ubicación del Ministerio de Salud Pública de La Rioja en Google Maps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3343.742573573482!2d-66.85952069999999!3d-29.4300107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427dbd21a9eafe9%3A0x290761e71077c26a!2sMinisterio%20de%20Salud%20P%C3%BAblica!5e1!3m2!1ses!2sar!4v1743521096053!5m2!1ses!2sar"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -316,48 +380,71 @@
         <div class="container">
           <div class="footer-main">
             <div class="footer-info">
-              <!-- Footer info logo -->
               <div class="logo">
                 <a href="index.html" class="logo-link">
                   <img
-                    src="assets/logo.svg"
-                    alt="Logo GI"
+                    src="assets/logo-96.png"
+                    alt=""
                     class="logo-image"
-                    width="28"
-                    height="28"
+                    width="40"
+                    height="40"
                   />
                   <span class="logo-text">DGGEI</span>
+                  <span class="visually-hidden"
+                    >— Dirección General de Gestión Estratégica de la
+                    Información</span
+                  >
                 </a>
               </div>
               <p class="footer-description">
-                Dirección General de Gestión de la Información. Transformando
-                datos en conocimiento para una gestión pública más eficiente.
+                Dirección General de Gestión Estratégica de la Información.
+                Transformando datos en conocimiento para una gestión pública más
+                eficiente.
               </p>
             </div>
             <div class="footer-links">
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Enlaces rápidos</h3>
-                <nav class="footer-nav">
+                <nav class="footer-nav" aria-label="Enlaces rápidos">
                   <a href="index.html" class="footer-link">Inicio</a>
                   <a href="nosotros.html" class="footer-link">Nosotros</a>
                   <a href="contacto.html" class="footer-link">Contacto</a>
+                  <a href="descargas.html" class="footer-link">Descargas</a>
                 </nav>
               </div>
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Servicios</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Gestión de Datos</a>
-                  <a href="#" class="footer-link">Análisis Estadístico</a>
-                  <a href="#" class="footer-link">Documentación Digital</a>
-                  <a href="#" class="footer-link">Capacitación</a>
+                <nav class="footer-nav" aria-label="Servicios">
+                  <a href="index.html#servicios" class="footer-link"
+                    >Gestión de datos</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Análisis estadístico</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Documentación digital</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Capacitación</a
+                  >
                 </nav>
               </div>
               <div class="footer-links-column">
-                <h3 class="footer-links-title">Legal</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Términos de uso</a>
-                  <a href="#" class="footer-link">Política de privacidad</a>
-                  <a href="#" class="footer-link">Aviso legal</a>
+                <h3 class="footer-links-title">Contacto</h3>
+                <nav class="footer-nav" aria-label="Contacto">
+                  <a
+                    href="mailto:gestiondelainformacion.msp@gmail.com"
+                    class="footer-link"
+                    >gestiondelainformacion.msp<wbr />@gmail.com</a
+                  >
+                  <a
+                    href="mailto:estadisticas.salud.msp@gmail.com"
+                    class="footer-link"
+                    >estadisticas.salud.msp<wbr />@gmail.com</a
+                  >
+                  <a href="contacto.html" class="footer-link"
+                    >Centro Administrativo Provincial, La Rioja</a
+                  >
                 </nav>
               </div>
             </div>
@@ -365,14 +452,16 @@
           <div class="footer-bottom">
             <p class="copyright">
               &copy; <span id="current-year"></span> Dirección General de
-              Gestión de la Información. Todos los derechos reservados.
+              Gestión Estratégica de la Información. Todos los derechos
+              reservados.
             </p>
             <div class="social-links">
               <a
                 target="_blank"
-                href="https://www.youtube.com/"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/@GestiondelaInformacion-MSP"
                 class="social-link"
-                aria-label="YouTube"
+                aria-label="Canal de YouTube de la Dirección General de Gestión Estratégica de la Información"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -384,6 +473,8 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
                 >
                   <path
                     d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
@@ -397,6 +488,6 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

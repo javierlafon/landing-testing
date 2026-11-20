@@ -2,16 +2,46 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Descargas - Dirección General de Gestión de la Información</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Descargas | DGGEI — Ministerio de Salud de La Rioja</title>
+    <meta
+      name="description"
+      content="Descarga los Anuarios Vitales de La Rioja y otra documentación técnica con datos de salud de la provincia."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DGGEI" />
+    <meta property="og:locale" content="es_AR" />
+    <meta
+      property="og:title"
+      content="Descargas | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      property="og:description"
+      content="Anuarios Vitales y documentación técnica para descargar con datos de salud de la provincia de La Rioja."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Descargas | DGGEI — Ministerio de Salud de La Rioja"
+    />
+    <meta
+      name="twitter:description"
+      content="Anuarios Vitales y documentación técnica para descargar con datos de salud de la provincia de La Rioja."
+    />
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     />
-    <link rel="shortcut icon" href="assets/favicom.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <div class="site-container">
       <!-- Header -->
       <header class="header">
@@ -19,32 +49,41 @@
           <div class="logo">
             <a href="index.html" class="logo-link">
               <img
-                src="assets/logo.svg"
-                alt="Logo GI"
+                src="assets/logo-96.png"
+                alt=""
                 class="logo-image"
-                width="28"
-                height="28"
+                width="40"
+                height="40"
               />
               <span class="logo-text">DGGEI</span>
+              <span class="visually-hidden"
+                >— Dirección General de Gestión Estratégica de la Información</span
+              >
             </a>
           </div>
 
           <!-- Desktop Navigation -->
-          <nav class="desktop-nav">
+          <nav class="desktop-nav" aria-label="Navegación principal">
             <a href="index.html" class="nav-link">Inicio</a>
             <a href="nosotros.html" class="nav-link">Nosotros</a>
             <a href="contacto.html" class="nav-link">Contacto</a>
-            <a href="descargas.html" class="nav-link active">Descargas</a>
+            <a href="descargas.html" class="nav-link" aria-current="page"
+              >Descargas</a
+            >
           </nav>
 
           <div class="header-actions">
-            <a href="contacto.html" class="button primary-button"
-              >Contáctanos</a
-            >
+            <a href="contacto.html" class="button primary-button">Contáctanos</a>
           </div>
 
           <!-- Mobile Menu Button -->
-          <button class="mobile-menu-button" aria-label="Toggle Menu">
+          <button
+            class="mobile-menu-button"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -56,6 +95,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="menu-icon"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -72,6 +113,8 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="close-icon hidden"
+              aria-hidden="true"
+              focusable="false"
             >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -80,50 +123,54 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="mobile-nav hidden">
-          <div class="container mobile-nav-container">
+        <div class="mobile-nav hidden" id="mobile-nav">
+          <nav class="container mobile-nav-container" aria-label="Navegación móvil">
             <a href="index.html" class="nav-link">Inicio</a>
             <a href="nosotros.html" class="nav-link">Nosotros</a>
             <a href="contacto.html" class="nav-link">Contacto</a>
-            <a href="descargas.html" class="nav-link active">Descargas</a>
+            <a href="descargas.html" class="nav-link" aria-current="page"
+              >Descargas</a
+            >
             <a href="contacto.html" class="button primary-button full-width"
               >Contáctanos</a
             >
-          </div>
+          </nav>
         </div>
       </header>
 
-      <main>
+      <main id="contenido" tabindex="-1">
         <div class="container page-container">
           <!-- Downloads Header -->
           <div class="page-header">
-            <h1 class="page-title">Descargas y Visualizaciones</h1>
+            <h1 class="page-title">Descargas</h1>
             <p class="page-description">
-              Accede a nuestros documentos y visualiza nuestros tableros de
-              datos
+              Accede a los anuarios e informes estadísticos de la provincia
             </p>
           </div>
 
           <!-- PDF Documents Section -->
-          <section class="downloads-section">
-            <h2 class="section-title">Documentos PDF</h2>
+          <section class="downloads-section" aria-labelledby="documentos-title">
+            <h2 class="section-title" id="documentos-title">Documentos PDF</h2>
             <p class="section-description">
-              Descarga nuestros informes, guías y documentación técnica
+              Descarga los informes, anuarios y documentación técnica que
+              elaboramos
             </p>
 
             <div class="documents-grid">
-              <div class="document-card">
+              <article class="document-card">
                 <div class="document-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path
                       d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
@@ -135,16 +182,18 @@
                 </div>
                 <div class="document-info">
                   <h3 class="document-title">Anuario Vitales 2022</h3>
-                  <p class="document-description">Description.</p>
+                  <p class="document-description">
+                    Estadísticas de nacimientos, defunciones y hechos vitales de
+                    la provincia de La Rioja correspondientes a 2022.
+                  </p>
                   <div class="document-meta">
-                    <span class="document-size">PDF · 2.4 MB</span>
-                    <span class="document-date">Actualizado: 04/04/2025</span>
+                    <span class="document-size">PDF · 2,9 MB</span>
                   </div>
                 </div>
                 <a
-                  target="_blank"
-                  href="assets/2022 - ANUARIO VITALES.pdf"
+                  href="assets/2022%20-%20ANUARIO%20VITALES.pdf"
                   class="button outline-button document-download-btn"
+                  download
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -157,27 +206,32 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="download-icon"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
                   Descargar
+                  <span class="visually-hidden">Anuario Vitales 2022 (PDF)</span>
                 </a>
-              </div>
+              </article>
 
-              <div class="document-card">
+              <article class="document-card">
                 <div class="document-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path
                       d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
@@ -189,18 +243,20 @@
                 </div>
                 <div class="document-info">
                   <h3 class="document-title">
-                    Anuario Vitales - Anexo Grafico 2022
+                    Anuario Vitales 2022 — Anexo gráfico
                   </h3>
-                  <p class="document-description">Description.</p>
+                  <p class="document-description">
+                    Gráficos y visualizaciones complementarias del Anuario
+                    Vitales 2022.
+                  </p>
                   <div class="document-meta">
-                    <span class="document-size">PDF · 1.8 MB</span>
-                    <span class="document-date">Actualizado: 03/11/2023</span>
+                    <span class="document-size">PDF · 12,6 MB</span>
                   </div>
                 </div>
                 <a
-                  target="_blank"
-                  href="assets/2022 - Anuario Vitales - Anexo Gráficos.pdf"
+                  href="assets/2022%20-%20Anuario%20Vitales%20-%20Anexo%20Gr%C3%A1ficos.pdf"
                   class="button outline-button document-download-btn"
+                  download
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -213,27 +269,34 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="download-icon"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
                   Descargar
+                  <span class="visually-hidden"
+                    >Anuario Vitales 2022, anexo gráfico (PDF)</span
+                  >
                 </a>
-              </div>
+              </article>
 
-              <div class="document-card">
+              <article class="document-card">
                 <div class="document-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path
                       d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
@@ -245,16 +308,18 @@
                 </div>
                 <div class="document-info">
                   <h3 class="document-title">Anuario Vitales 2021</h3>
-                  <p class="document-description">Description.</p>
+                  <p class="document-description">
+                    Estadísticas de nacimientos, defunciones y hechos vitales de
+                    la provincia de La Rioja correspondientes a 2021.
+                  </p>
                   <div class="document-meta">
-                    <span class="document-size">PDF · 3.2 MB</span>
-                    <span class="document-date">Actualizado: 20/12/2023</span>
+                    <span class="document-size">PDF · 35,7 MB</span>
                   </div>
                 </div>
                 <a
-                  target="_blank"
-                  href="assets/2021 - Anuario Vitales modificado noviembre.pdf"
+                  href="assets/2021%20-%20Anuario%20Vitales%20modificado%20noviembre.pdf"
                   class="button outline-button document-download-btn"
+                  download
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -267,27 +332,32 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="download-icon"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
                   Descargar
+                  <span class="visually-hidden">Anuario Vitales 2021 (PDF)</span>
                 </a>
-              </div>
+              </article>
 
-              <div class="document-card">
+              <article class="document-card">
                 <div class="document-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
+                    width="24"
+                    height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path
                       d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
@@ -299,17 +369,20 @@
                 </div>
                 <div class="document-info">
                   <h3 class="document-title">
-                    Anuario Vitales - Anexo Grafico 2021
+                    Anuario Vitales 2021 — Anexo gráfico
                   </h3>
-                  <p class="document-description">Description.</p>
+                  <p class="document-description">
+                    Gráficos y visualizaciones complementarias del Anuario
+                    Vitales 2021.
+                  </p>
                   <div class="document-meta">
-                    <span class="document-size">PDF · 1.5 MB</span>
-                    <span class="document-date">Actualizado: 05/02/2024</span>
+                    <span class="document-size">PDF · 11,3 MB</span>
                   </div>
                 </div>
                 <a
-                  href="assets/2021 - Anuario Vitales - Anexo Grafico.pdf"
+                  href="assets/2021%20-%20Anuario%20Vitales%20-%20Anexo%20Grafico.pdf"
                   class="button outline-button document-download-btn"
+                  download
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -322,129 +395,19 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="download-icon"
+                    aria-hidden="true"
+                    focusable="false"
                   >
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
                   Descargar
+                  <span class="visually-hidden"
+                    >Anuario Vitales 2021, anexo gráfico (PDF)</span
+                  >
                 </a>
-              </div>
-            </div>
-          </section>
-
-          <!-- Power BI Dashboards Section -->
-          <section class="dashboards-section">
-            <h2 class="section-title">Tableros de Power BI</h2>
-            <p class="section-description">
-              Visualiza nuestros tableros interactivos con datos actualizados
-            </p>
-
-            <div class="dashboards-grid">
-              <div class="dashboard-card">
-                <h3 class="dashboard-title">
-                  Estadísticas de Gestión Documental
-                </h3>
-                <p class="dashboard-description">
-                  Visualización de métricas clave sobre la gestión de documentos
-                  en la administración pública.
-                </p>
-                <div class="dashboard-embed">
-                  <!-- Aquí va el iframe de Power BI -->
-                  <iframe
-                    title="Estadísticas de Gestión Documental"
-                    width="100%"
-                    height="450"
-                    src="https://app.powerbi.com/reportEmbed?reportId=a370bb78-004b-49df-b922-ac18dcd0732c&autoAuth=true&ctid=cad724cb-2c9b-4ca4-8405-a2ab8e8c6d15"
-                    frameborder="0"
-                    allowfullscreen="true"
-                  >
-                  </iframe>
-                </div>
-                <div class="dashboard-meta">
-                  <span class="dashboard-update">Actualización: Diaria</span>
-                  <span class="dashboard-date"
-                    >Última actualización: 03/04/2024</span
-                  >
-                </div>
-              </div>
-
-              <div class="dashboard-card">
-                <h3 class="dashboard-title">Indicadores de Desempeño 2023</h3>
-                <p class="dashboard-description">
-                  Análisis de los principales indicadores de desempeño de la
-                  Dirección General durante el año 2023.
-                </p>
-                <div class="dashboard-embed">
-                  <!-- Aquí va el iframe de Power BI -->
-                  <iframe
-                    title="Indicadores de Desempeño 2023"
-                    width="100%"
-                    height="450"
-                    src="https://app.powerbi.com/reportEmbed?reportId=a370bb78-004b-49df-b922-ac18dcd0732c&autoAuth=true&ctid=cad724cb-2c9b-4ca4-8405-a2ab8e8c6d15"
-                    frameborder="0"
-                    allowfullscreen="true"
-                  >
-                  </iframe>
-                </div>
-                <div class="dashboard-meta">
-                  <span class="dashboard-update">Actualización: Mensual</span>
-                  <span class="dashboard-date"
-                    >Última actualización: 15/01/2024</span
-                  >
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Instructions Section -->
-          <section class="instructions-section">
-            <div class="card">
-              <div class="card-content">
-                <h2 class="section-title">
-                  Instrucciones para visualizar los tableros
-                </h2>
-                <div class="instructions-content">
-                  <div class="instruction-item">
-                    <div class="instruction-number">1</div>
-                    <div class="instruction-text">
-                      <h3 class="instruction-title">
-                        Interactúa directamente con el tablero
-                      </h3>
-                      <p class="instruction-description">
-                        Puedes hacer clic en los diferentes elementos del
-                        tablero para filtrar la información según tus
-                        necesidades.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="instruction-item">
-                    <div class="instruction-number">2</div>
-                    <div class="instruction-text">
-                      <h3 class="instruction-title">
-                        Utiliza los filtros disponibles
-                      </h3>
-                      <p class="instruction-description">
-                        Los tableros incluyen filtros predefinidos que puedes
-                        usar para personalizar la visualización de los datos.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="instruction-item">
-                    <div class="instruction-number">3</div>
-                    <div class="instruction-text">
-                      <h3 class="instruction-title">
-                        Ver en pantalla completa
-                      </h3>
-                      <p class="instruction-description">
-                        Puedes hacer clic en el icono de pantalla completa en la
-                        esquina inferior derecha del tablero para una mejor
-                        visualización.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </article>
             </div>
           </section>
         </div>
@@ -455,28 +418,32 @@
         <div class="container">
           <div class="footer-main">
             <div class="footer-info">
-              <!-- Footer info logo -->
               <div class="logo">
                 <a href="index.html" class="logo-link">
                   <img
-                    src="assets/logo.svg"
-                    alt="Logo GI"
+                    src="assets/logo-96.png"
+                    alt=""
                     class="logo-image"
-                    width="28"
-                    height="28"
+                    width="40"
+                    height="40"
                   />
                   <span class="logo-text">DGGEI</span>
+                  <span class="visually-hidden"
+                    >— Dirección General de Gestión Estratégica de la
+                    Información</span
+                  >
                 </a>
               </div>
               <p class="footer-description">
-                Dirección General de Gestión de la Información. Transformando
-                datos en conocimiento para una gestión pública más eficiente.
+                Dirección General de Gestión Estratégica de la Información.
+                Transformando datos en conocimiento para una gestión pública más
+                eficiente.
               </p>
             </div>
             <div class="footer-links">
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Enlaces rápidos</h3>
-                <nav class="footer-nav">
+                <nav class="footer-nav" aria-label="Enlaces rápidos">
                   <a href="index.html" class="footer-link">Inicio</a>
                   <a href="nosotros.html" class="footer-link">Nosotros</a>
                   <a href="contacto.html" class="footer-link">Contacto</a>
@@ -485,19 +452,37 @@
               </div>
               <div class="footer-links-column">
                 <h3 class="footer-links-title">Servicios</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Gestión de Datos</a>
-                  <a href="#" class="footer-link">Análisis Estadístico</a>
-                  <a href="#" class="footer-link">Documentación Digital</a>
-                  <a href="#" class="footer-link">Capacitación</a>
+                <nav class="footer-nav" aria-label="Servicios">
+                  <a href="index.html#servicios" class="footer-link"
+                    >Gestión de datos</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Análisis estadístico</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Documentación digital</a
+                  >
+                  <a href="index.html#servicios" class="footer-link"
+                    >Capacitación</a
+                  >
                 </nav>
               </div>
               <div class="footer-links-column">
-                <h3 class="footer-links-title">Legal</h3>
-                <nav class="footer-nav">
-                  <a href="#" class="footer-link">Términos de uso</a>
-                  <a href="#" class="footer-link">Política de privacidad</a>
-                  <a href="#" class="footer-link">Aviso legal</a>
+                <h3 class="footer-links-title">Contacto</h3>
+                <nav class="footer-nav" aria-label="Contacto">
+                  <a
+                    href="mailto:gestiondelainformacion.msp@gmail.com"
+                    class="footer-link"
+                    >gestiondelainformacion.msp<wbr />@gmail.com</a
+                  >
+                  <a
+                    href="mailto:estadisticas.salud.msp@gmail.com"
+                    class="footer-link"
+                    >estadisticas.salud.msp<wbr />@gmail.com</a
+                  >
+                  <a href="contacto.html" class="footer-link"
+                    >Centro Administrativo Provincial, La Rioja</a
+                  >
                 </nav>
               </div>
             </div>
@@ -505,10 +490,17 @@
           <div class="footer-bottom">
             <p class="copyright">
               &copy; <span id="current-year"></span> Dirección General de
-              Gestión de la Información. Todos los derechos reservados.
+              Gestión Estratégica de la Información. Todos los derechos
+              reservados.
             </p>
             <div class="social-links">
-              <a href="#" class="social-link" aria-label="YouTube">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/@GestiondelaInformacion-MSP"
+                class="social-link"
+                aria-label="Canal de YouTube de la Dirección General de Gestión Estratégica de la Información"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -519,6 +511,8 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
                 >
                   <path
                     d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
@@ -532,6 +526,6 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
